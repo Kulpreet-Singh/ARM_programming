@@ -1,0 +1,85 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             program, code, readonly
+    2 00000000         entry
+    3 00000000         main
+    4 00000000 E3A0000B        ldr              r0, =11
+    5 00000004 E59F1014        ldr              r1, src
+    6 00000008 E59F2014        ldr              r2, dest
+    7 0000000C         loop
+    8 0000000C E4D13001        ldrb             r3, [r1], #1
+    9 00000010 E4C23001        strb             r3, [r2], #1
+   10 00000014 E2400001        sub              r0, r0, #1
+   11 00000018 E3500005        cmp              r0, #5
+   12 0000001C CAFFFFFA        bgt              loop
+   13 00000020         
+   14 00000020                 AREA             program, data, readonly
+   15 00000020 00000020 
+                       src     dcd              &00000020
+   16 00000024 00000200 
+                       dest    dcd              &00000200
+   17 00000028                 end
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\labeval3q1.d -o.\objects\labeval3q1.o -IC:\Keil_v5\ARM\RV31\INC -IC
+:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_
+VERSION SETA 525" --list=.\listings\labeval3q1.lst labEval3Q1.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+dest 00000024
+
+Symbol: dest
+   Definitions
+      At line 16 in file labEval3Q1.asm
+   Uses
+      At line 6 in file labEval3Q1.asm
+Comment: dest used once
+entry 00000000
+
+Symbol: entry
+   Definitions
+      At line 2 in file labEval3Q1.asm
+   Uses
+      None
+Comment: entry unused
+loop 0000000C
+
+Symbol: loop
+   Definitions
+      At line 7 in file labEval3Q1.asm
+   Uses
+      At line 12 in file labEval3Q1.asm
+Comment: loop used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 3 in file labEval3Q1.asm
+   Uses
+      None
+Comment: main unused
+program 00000000
+
+Symbol: program
+   Definitions
+      At line 1 in file labEval3Q1.asm
+   Uses
+      None
+Comment: program unused
+src 00000020
+
+Symbol: src
+   Definitions
+      At line 15 in file labEval3Q1.asm
+   Uses
+      At line 5 in file labEval3Q1.asm
+Comment: src used once
+6 symbols
+338 symbols in table

@@ -1,0 +1,85 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             program, code, readonly
+    2 00000000         Entry
+    3 00000000         Main
+    4 00000000 E59F1018        LDR              R1, value1
+    5 00000004 E59F2018        LDR              R2, value2
+    6 00000008 E3A00000        MOV              R0, #0X00000000
+    7 0000000C         LOOP
+    8 0000000C E0800001        ADD              R0, R0,R1
+    9 00000010 E2522001        SUBS             R2, R2,#1
+   10 00000014 1AFFFFFC        BNE              LOOP
+   11 00000018 E1A03000        MOV              R3,R0
+   12 0000001C EF000011        SWI              &11
+   13 00000020                 AREA             program, code, readonly
+   14 00000020 00000002 
+                       value1  DCD              &00000002
+   15 00000024 00000003 
+                       value2  DCD              &00000003
+   16 00000028                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\multiplyusingadd.d -o.\objects\multiplyusingadd.o -IC:\Keil_v5\ARM\
+RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine
+="__UVISION_VERSION SETA 525" --list=.\listings\multiplyusingadd.lst multiplyus
+ingadd.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Entry 00000000
+
+Symbol: Entry
+   Definitions
+      At line 2 in file multiplyusingadd.asm
+   Uses
+      None
+Comment: Entry unused
+LOOP 0000000C
+
+Symbol: LOOP
+   Definitions
+      At line 7 in file multiplyusingadd.asm
+   Uses
+      At line 10 in file multiplyusingadd.asm
+Comment: LOOP used once
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 3 in file multiplyusingadd.asm
+   Uses
+      None
+Comment: Main unused
+program 00000000
+
+Symbol: program
+   Definitions
+      At line 1 in file multiplyusingadd.asm
+   Uses
+      None
+Comment: program unused
+value1 00000020
+
+Symbol: value1
+   Definitions
+      At line 14 in file multiplyusingadd.asm
+   Uses
+      At line 4 in file multiplyusingadd.asm
+Comment: value1 used once
+value2 00000024
+
+Symbol: value2
+   Definitions
+      At line 15 in file multiplyusingadd.asm
+   Uses
+      At line 5 in file multiplyusingadd.asm
+Comment: value2 used once
+6 symbols
+338 symbols in table

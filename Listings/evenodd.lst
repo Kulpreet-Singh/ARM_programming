@@ -1,0 +1,52 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM,CODE,READONLY
+    2 00000000         ENTRY
+    3 00000000 E59F1008        LDR              R1,value
+    4 00000004 E3A02001        MOV              R2,#0x01
+    5 00000008 E0013002        AND              R3,R1,R2
+    6 0000000C EF000011        SWI              &11
+    7 00000010                 AREA             PROGRAM,DATA,READONLY
+    8 00000010 00000007 
+                       value   DCD              &00000007
+    9 00000014                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\evenodd.d -o.\objects\evenodd.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil
+_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSIO
+N SETA 525" --list=.\listings\evenodd.lst evenodd.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file evenodd.asm
+   Uses
+      None
+Comment: ENTRY unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file evenodd.asm
+   Uses
+      None
+Comment: PROGRAM unused
+value 00000010
+
+Symbol: value
+   Definitions
+      At line 8 in file evenodd.asm
+   Uses
+      At line 3 in file evenodd.asm
+Comment: value used once
+3 symbols
+335 symbols in table

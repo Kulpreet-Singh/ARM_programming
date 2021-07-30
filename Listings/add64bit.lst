@@ -1,0 +1,82 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;CODE: Addition two numbers of 64-bit
+    2 00000000                 AREA             PROGRAM,CODE,READONLY
+    3 00000000         ENTRY
+    4 00000000 E59F0028        LDR              R0,=value1
+    5 00000004 E5901000        LDR              R1,[R0]
+    6 00000008 E5902004        LDR              R2,[R0,#0x04]
+    7 0000000C E59F0020        LDR              R0,=value2
+    8 00000010 E5903000        LDR              R3,[R0]
+    9 00000014 E5904004        LDR              R4,[R0,#0x04]
+   10 00000018 E0926004        ADDS             R6,R2,R4
+   11 0000001C E0A15003        ADC              R5,R1,R3
+   12 00000020 E59F0020        LDR              R0,result
+   13 00000024 E5805000        STR              R5,[R0]
+   14 00000028 E5806004        STR              R6,[R0,#0x04]
+   15 0000002C EF000011        SWI              &11
+   16 00000030 00000000 
+              00000000         AREA             PROGRAM,CODE,READWRITE
+   17 00000038 12A2E640 
+              F2100123 value1  DCD              &12A2E640,&F2100123
+   18 00000040 0010198F 
+              40023F51 value2  DCD              &0010198F,&40023F51
+   19 00000048 00000600 
+                       result  DCD              &00000600
+   20 0000004C                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\add64bit.d -o.\objects\add64bit.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Ke
+il_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERS
+ION SETA 525" --list=.\listings\add64bit.lst add64bit.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 3 in file add64bit.asm
+   Uses
+      None
+Comment: ENTRY unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 2 in file add64bit.asm
+   Uses
+      None
+Comment: PROGRAM unused
+result 00000048
+
+Symbol: result
+   Definitions
+      At line 19 in file add64bit.asm
+   Uses
+      At line 12 in file add64bit.asm
+Comment: result used once
+value1 00000038
+
+Symbol: value1
+   Definitions
+      At line 17 in file add64bit.asm
+   Uses
+      At line 4 in file add64bit.asm
+Comment: value1 used once
+value2 00000040
+
+Symbol: value2
+   Definitions
+      At line 18 in file add64bit.asm
+   Uses
+      At line 7 in file add64bit.asm
+Comment: value2 used once
+5 symbols
+339 symbols in table

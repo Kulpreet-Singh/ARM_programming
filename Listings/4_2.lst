@@ -1,0 +1,45 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             program,code,readonly
+    2 00000000                 entry
+    3 00000000         main
+    4 00000000 E3A01005        mov              r1,#5
+    5 00000004 E3A02008        mov              r2,#8
+    6 00000008 E1510002        cmp              r1,r2
+    7 0000000C C1A00001        movgt            r0,r1
+    8 00000010 B1A00002        movlt            r0,r2
+    9 00000014 E1E00000        mvn              r0,r0
+   10 00000018 E2800001        add              r0,r0,#1
+   11 0000001C                 end
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\4_2.d -o.\objects\4_2.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\
+CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 5
+25" --list=.\listings\4_2.lst 4_2.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 3 in file 4_2.asm
+   Uses
+      None
+Comment: main unused
+program 00000000
+
+Symbol: program
+   Definitions
+      At line 1 in file 4_2.asm
+   Uses
+      None
+Comment: program unused
+2 symbols
+334 symbols in table

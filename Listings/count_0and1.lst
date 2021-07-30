@@ -1,0 +1,68 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;CODE: count zero's and one's in a word
+    2 00000000                 AREA             PROGRAM,CODE,READONLY
+    3 00000000         ENTRY
+    4 00000000 E59F001C        LDR              R0,VALUE1
+    5 00000004 E3A01020        MOV              R1,#0x20
+    6 00000008 E3A02000        MOV              R2,#0x00    ; # Of Zero's
+    7 0000000C E3A03000        MOV              R3,#0x00    ; # Of one's
+    8 00000010         LOOP
+    9 00000010 E1B00060        MOVS             R0,R0,RRX
+   10 00000014 22833001        ADDCS            R3,R3,#0x01
+   11 00000018 32822001        ADDCC            R2,R2,#0x01
+   12 0000001C E2511001        SUBS             R1,R1,#0x01
+   13 00000020 1AFFFFFA        BNE              LOOP
+   14 00000024         
+   15 00000024                 AREA             PROGRAM,DATA,READONLY
+   16 00000024 00000005 
+                       VALUE1  DCD              &00000005
+   17 00000028                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\count_0and1.d -o.\objects\count_0and1.o -IC:\Keil_v5\ARM\RV31\INC -
+IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISIO
+N_VERSION SETA 525" --list=.\listings\count_0and1.lst count_0and1.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 3 in file count_0and1.asm
+   Uses
+      None
+Comment: ENTRY unused
+LOOP 00000010
+
+Symbol: LOOP
+   Definitions
+      At line 8 in file count_0and1.asm
+   Uses
+      At line 13 in file count_0and1.asm
+Comment: LOOP used once
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 2 in file count_0and1.asm
+   Uses
+      None
+Comment: PROGRAM unused
+VALUE1 00000024
+
+Symbol: VALUE1
+   Definitions
+      At line 16 in file count_0and1.asm
+   Uses
+      At line 4 in file count_0and1.asm
+Comment: VALUE1 used once
+4 symbols
+336 symbols in table

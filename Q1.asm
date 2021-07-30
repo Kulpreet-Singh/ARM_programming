@@ -1,0 +1,24 @@
+	AREA Program, CODE, READONLY
+ENTRY
+	LDR R0, rv
+	LDR R1, av
+	LDR R2, bv
+	LDR R3, cv
+	MUL R4, R1, R3
+	MOV R4, R4, ASR #1
+	ADD R4, R4, R0 ; X value
+	MUL R5, R2, R2
+	MUL R6, R5, R1
+	ADD R6, R6, #5 ; Y value
+	ADD R7, R1, R2
+	MOV R7, R7, LSL #2
+	MOV R8, R3
+	MOV R8, R8, LSL #1
+	ADD R7, R7, R8
+	ADD R7, R7, #4 ; Z value
+	AREA Program, DATA, READONLY
+rv DCD &00000001
+av DCD &00000002
+bv DCD &00000002
+cv DCD &00000003
+	END

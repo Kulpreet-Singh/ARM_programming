@@ -1,0 +1,73 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM,CODE,READONLY
+    2 00000000         ENTRY
+    3 00000000 E59F0014        LDR              R0,value1
+    4 00000004 E3A01001        MOV              R1,#0x01
+    5 00000008         loop
+    6 00000008 E0020091        MUL              R2,R1,R0
+    7 0000000C E1A01002        MOV              R1,R2
+    8 00000010 E2400001        SUB              R0,R0,#0x01
+    9 00000014 E3500001        CMP              R0,#0x01
+   10 00000018 1AFFFFFA        BNE              loop
+   11 0000001C                 AREA             PROGRAM,DATA,READONLY
+   12 0000001C 00000003 
+                       value1  DCD              &00000003
+   13 00000020         END
+                       
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\test2.d -o.\objects\test2.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\
+ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SE
+TA 525" --list=.\listings\test2.lst test2.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+END 00000020
+
+Symbol: END
+   Definitions
+      At line 13 in file test2.asm
+   Uses
+      None
+Comment: END unused
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file test2.asm
+   Uses
+      None
+Comment: ENTRY unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file test2.asm
+   Uses
+      None
+Comment: PROGRAM unused
+loop 00000008
+
+Symbol: loop
+   Definitions
+      At line 5 in file test2.asm
+   Uses
+      At line 10 in file test2.asm
+Comment: loop used once
+value1 0000001C
+
+Symbol: value1
+   Definitions
+      At line 12 in file test2.asm
+   Uses
+      At line 3 in file test2.asm
+Comment: value1 used once
+5 symbols
+337 symbols in table

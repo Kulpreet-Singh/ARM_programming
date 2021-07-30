@@ -1,0 +1,8 @@
+	AREA Program, CODE, READONLY
+ENTRY
+	LDR R0, value
+	SUBS R0, R0, ASR #3
+	
+	AREA Program, DATA, READONLY
+value DCD &0000000A
+	END

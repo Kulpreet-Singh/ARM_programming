@@ -1,0 +1,51 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Program, CODE, READONLY
+    2 00000000         ENTRY
+    3 00000000 E59F0000        LDR              R0, value
+    4 00000004 E05001C0        SUBS             R0, R0, ASR #3
+    5 00000008         
+    6 00000008                 AREA             Program, DATA, READONLY
+    7 00000008 0000000A 
+                       value   DCD              &0000000A
+    8 0000000C                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\q3.d -o.\objects\q3.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CM
+SIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 525
+" --list=.\listings\q3.lst Q3.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file Q3.asm
+   Uses
+      None
+Comment: ENTRY unused
+Program 00000000
+
+Symbol: Program
+   Definitions
+      At line 1 in file Q3.asm
+   Uses
+      None
+Comment: Program unused
+value 00000008
+
+Symbol: value
+   Definitions
+      At line 7 in file Q3.asm
+   Uses
+      At line 3 in file Q3.asm
+Comment: value used once
+3 symbols
+335 symbols in table

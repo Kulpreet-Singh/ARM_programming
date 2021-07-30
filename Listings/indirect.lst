@@ -1,0 +1,65 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E59F1014        LDR              R1, VALUE1
+    5 00000004 E59F2014        LDR              R2, VALUE2
+    6 00000008 E5911000        LDR              R1, [R1]
+    7 0000000C E5922000        LDR              R2, [R2]
+    8 00000010 E0813002        ADD              R3, R1, R2
+    9 00000014 E0424001        SUB              R4, R2, R1
+   10 00000018 EF000011        SWI              &11
+   11 0000001C 00000500 
+                       VALUE1  DCD              &00000500
+   12 00000020 00000504 
+                       VALUE2  DCD              &00000504
+   13 00000024                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\indirect.d -o.\objects\indirect.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Ke
+il_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERS
+ION SETA 525" --list=.\listings\indirect.lst indirect.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file indirect.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file indirect.asm
+   Uses
+      None
+Comment: PROGRAM unused
+VALUE1 0000001C
+
+Symbol: VALUE1
+   Definitions
+      At line 11 in file indirect.asm
+   Uses
+      At line 4 in file indirect.asm
+Comment: VALUE1 used once
+VALUE2 00000020
+
+Symbol: VALUE2
+   Definitions
+      At line 12 in file indirect.asm
+   Uses
+      At line 5 in file indirect.asm
+Comment: VALUE2 used once
+4 symbols
+336 symbols in table

@@ -1,0 +1,62 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             program,code,readonly
+    2 00000000                 entry
+    3 00000000         main
+    4 00000000 E3A01001        mov              r1,#1
+    5 00000004 E3A02002        mov              r2,#2
+    6 00000008 E3A03003        mov              r3,#3
+    7 0000000C E3A00000        mov              r0,#0
+    8 00000010 E1A04002        mov              r4,r2
+    9 00000014         loop
+   10 00000014 E0444001        sub              r4,r4,r1
+   11 00000018 E2800001        add              r0,r0,#1
+   12 0000001C E3540000        cmp              r4,#0
+   13 00000020 AAFFFFFB        bge              loop
+   14 00000024 E2400001        sub              r0,r0,#1
+   15 00000028 E0040290        mul              r4,r0,r2
+   16 0000002C E0050393        mul              r5,r3,r3
+   17 00000030 E0840005        add              r0,r4,r5
+   18 00000034 E2800002        add              r0,r0,#2
+   19 00000038                 area             program,data,readonly
+   20 00000038                 end
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\4_3y.d -o.\objects\4_3y.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\AR
+M\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA
+ 525" --list=.\listings\4_3y.lst 4_3y.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+loop 00000014
+
+Symbol: loop
+   Definitions
+      At line 9 in file 4_3y.asm
+   Uses
+      At line 13 in file 4_3y.asm
+Comment: loop used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 3 in file 4_3y.asm
+   Uses
+      None
+Comment: main unused
+program 00000000
+
+Symbol: program
+   Definitions
+      At line 1 in file 4_3y.asm
+   Uses
+      None
+Comment: program unused
+3 symbols
+335 symbols in table

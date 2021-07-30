@@ -1,0 +1,79 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             program, code, readonly
+    2 00000000         entry
+    3 00000000         main
+    4 00000000 E3A00003        mov              r0, #3
+    5 00000004 E59F1024        ldr              r1,=array
+    6 00000008 E5D12000        ldrb             r2, [r1]    ;largest
+    7 0000000C E4D13001        ldrb             r3, [r1], #0x01 ; smallest
+    8 00000010         loop
+    9 00000010 E4D14001        ldrb             r4, [r1], #0x01
+   10 00000014 E1520004        cmp              r2, r4
+   11 00000018 B1A02004        movlt            r2, r4
+   12 0000001C E1530004        cmp              r3, r4
+   13 00000020 C1A03004        movgt            r3, r4
+   14 00000024 E2400001        sub              r0, r0, #1
+   15 00000028 E3500000        cmp              r0, #0
+   16 0000002C 1AFFFFF7        bne              loop
+   17 00000030         
+   18 00000030 00000000        AREA             program, data, readonly
+   19 00000034 04 05 06 
+              07       array   dcb              4,5,6,7
+   20 00000038                 end
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\labeval3q2.d -o.\objects\labeval3q2.o -IC:\Keil_v5\ARM\RV31\INC -IC
+:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_
+VERSION SETA 525" --list=.\listings\labeval3q2.lst labEval3Q2.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+array 00000034
+
+Symbol: array
+   Definitions
+      At line 19 in file labEval3Q2.asm
+   Uses
+      At line 5 in file labEval3Q2.asm
+Comment: array used once
+entry 00000000
+
+Symbol: entry
+   Definitions
+      At line 2 in file labEval3Q2.asm
+   Uses
+      None
+Comment: entry unused
+loop 00000010
+
+Symbol: loop
+   Definitions
+      At line 8 in file labEval3Q2.asm
+   Uses
+      At line 16 in file labEval3Q2.asm
+Comment: loop used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 3 in file labEval3Q2.asm
+   Uses
+      None
+Comment: main unused
+program 00000000
+
+Symbol: program
+   Definitions
+      At line 1 in file labEval3Q2.asm
+   Uses
+      None
+Comment: program unused
+5 symbols
+339 symbols in table

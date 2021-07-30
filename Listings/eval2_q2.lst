@@ -1,0 +1,64 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000         ENTRY
+    3 00000000         MAIN
+    4 00000000 E3A01001        ldr              r1,=1       ;a
+    5 00000004 E3A02002        ldr              r2,=2       ;b
+    6 00000008 E3A03003        ldr              r3,=3       ;c
+    7 0000000C         
+    8 0000000C E0000291        mul              r0,r1,r2
+    9 00000010 E0040290        mul              r4,r0,r2
+   10 00000014 E2844006        add              r4, r4, #6
+   11 00000018 E1A040C4        mov              r4, r4, asr #1 ; X
+   12 0000001C E1A08164        mov              r8, r4, ror #2
+   13 00000020         
+   14 00000020 E1A00002        mov              r0, r2
+   15 00000024 E0050290        mul              r5, r0, r2
+   16 00000028 E0060393        mul              r6, r3, r3
+   17 0000002C E0857006        add              r7, r5, r6
+   18 00000030 E0877002        add              r7, r7, r2  ;Y
+   19 00000034 E1A09167        mov              r9, r7, ror #2
+   20 00000038         
+   21 00000038         
+   22 00000038                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\eval2_q2.d -o.\objects\eval2_q2.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Ke
+il_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERS
+ION SETA 525" --list=.\listings\eval2_q2.lst eval2_q2.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file eval2_q2.asm
+   Uses
+      None
+Comment: ENTRY unused
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file eval2_q2.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file eval2_q2.asm
+   Uses
+      None
+Comment: PROGRAM unused
+3 symbols
+335 symbols in table

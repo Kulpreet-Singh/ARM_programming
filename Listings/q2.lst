@@ -1,0 +1,88 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             program, code, readonly
+    2 00000000         Entry
+    3 00000000         Main
+    4 00000000 E59F0020        LDR              R0, value1
+    5 00000004 E59F3020        LDR              R3, result
+    6 00000008 E3A0200A        MOV              R2, #0x0A
+    7 0000000C E1A01000        MOV              R1, R0
+    8 00000010         
+    9 00000010         LOOP
+   10 00000010 E5830000        STR              R0,[R3]
+   11 00000014 E2833004        ADD              R3, R3, #0x04
+   12 00000018 E0800001        ADD              R0, R0,R1
+   13 0000001C E2522001        SUBS             R2, R2,#1
+   14 00000020 1AFFFFFA        BNE              LOOP
+   15 00000024 EF000011        SWI              &11
+   16 00000028         
+   17 00000028                 AREA             program, code, readonly
+   18 00000028 00000005 
+                       value1  DCD              &00000005
+   19 0000002C 00000600 
+                       result  DCD              &00000600
+   20 00000030                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\q2.d -o.\objects\q2.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CM
+SIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 525
+" --list=.\listings\q2.lst Q2.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Entry 00000000
+
+Symbol: Entry
+   Definitions
+      At line 2 in file Q2.asm
+   Uses
+      None
+Comment: Entry unused
+LOOP 00000010
+
+Symbol: LOOP
+   Definitions
+      At line 9 in file Q2.asm
+   Uses
+      At line 14 in file Q2.asm
+Comment: LOOP used once
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 3 in file Q2.asm
+   Uses
+      None
+Comment: Main unused
+program 00000000
+
+Symbol: program
+   Definitions
+      At line 1 in file Q2.asm
+   Uses
+      None
+Comment: program unused
+result 0000002C
+
+Symbol: result
+   Definitions
+      At line 19 in file Q2.asm
+   Uses
+      At line 5 in file Q2.asm
+Comment: result used once
+value1 00000028
+
+Symbol: value1
+   Definitions
+      At line 18 in file Q2.asm
+   Uses
+      At line 4 in file Q2.asm
+Comment: value1 used once
+6 symbols
+338 symbols in table

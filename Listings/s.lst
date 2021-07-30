@@ -1,0 +1,63 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             program, code, readonly
+    2 00000000         entry
+    3 00000000 E59F000C        LDR              R0, value1
+    4 00000004 E59F100C        LDR              R1, value2
+    5 00000008 E0813000        ADD              R3, R1, R0
+    6 0000000C E0414000        SUB              R4, R1, R0
+    7 00000010 EF000011        SWI              &11
+    8 00000014                 AREA             program, data, readonly
+    9 00000014 00000004 
+                       value1  DCD              &0000004
+   10 00000018 00000007 
+                       value2  DCD              &0000007
+   11 0000001C                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\s.d -o.\objects\s.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSI
+S\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 525" 
+--list=.\listings\s.lst s.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+entry 00000000
+
+Symbol: entry
+   Definitions
+      At line 2 in file s.asm
+   Uses
+      None
+Comment: entry unused
+program 00000000
+
+Symbol: program
+   Definitions
+      At line 1 in file s.asm
+   Uses
+      None
+Comment: program unused
+value1 00000014
+
+Symbol: value1
+   Definitions
+      At line 9 in file s.asm
+   Uses
+      At line 3 in file s.asm
+Comment: value1 used once
+value2 00000018
+
+Symbol: value2
+   Definitions
+      At line 10 in file s.asm
+   Uses
+      At line 4 in file s.asm
+Comment: value2 used once
+4 symbols
+336 symbols in table

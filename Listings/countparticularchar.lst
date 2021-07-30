@@ -1,0 +1,67 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;COUNT s PARTICULAR CHARACTER IN A STRING
+    2 00000000         ;CODE:
+    3 00000000                 AREA             PROGRAM,CODE,READONLY
+    4 00000000         ENTRY
+    5 00000000 E59F0010        LDR              R0,=string
+    6 00000004         LOOP
+    7 00000004 E4D01001        LDRB             R1,[R0],#0x01
+    8 00000008 E3510073        CMP              R1,"s"
+    9 0000000C 02822001        ADDEQ            R2,R2,#0x01
+   10 00000010 E3510000        CMP              R1,#0x00
+   11 00000014 1AFFFFFA        BNE              LOOP
+   12 00000018 00000000        AREA             PROGRAM,DATA,READONLY
+   13 0000001C 41 73 73 
+              65 6D 62 
+              6C 79    string  DCB              "Assembly"
+   14 00000024                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\countparticularchar.d -o.\objects\countparticularchar.o -IC:\Keil_v
+5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --pre
+define="__UVISION_VERSION SETA 525" --list=.\listings\countparticularchar.lst c
+ountParticularChar.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 4 in file countParticularChar.asm
+   Uses
+      None
+Comment: ENTRY unused
+LOOP 00000004
+
+Symbol: LOOP
+   Definitions
+      At line 6 in file countParticularChar.asm
+   Uses
+      At line 11 in file countParticularChar.asm
+Comment: LOOP used once
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 3 in file countParticularChar.asm
+   Uses
+      None
+Comment: PROGRAM unused
+string 0000001C
+
+Symbol: string
+   Definitions
+      At line 13 in file countParticularChar.asm
+   Uses
+      At line 5 in file countParticularChar.asm
+Comment: string used once
+4 symbols
+338 symbols in table

@@ -1,0 +1,10 @@
+	AREA PROGRAM, CODE, READWRITE
+ENTRY
+	LDR R0,=4
+	MOV R1, #3
+	ADD R2, R1, R0
+	LDR R3,char
+	LDR R4,x
+char DCB 'B'
+x DCD &20
+	END

@@ -1,0 +1,66 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             program,code,readonly
+    2 00000000                 entry
+    3 00000000         main
+    4 00000000 E59F1018        ldr              r1,=string
+    5 00000004 E3A00B01        mov              r0,#0x00000400
+    6 00000008         loop
+    7 00000008 E4D12001        ldrb             r2,[r1],#0x01
+    8 0000000C E1A03002        mov              r3,r2
+    9 00000010 E5803000        str              r3,[r0]
+   10 00000014 E2800004        add              r0,r0,#0x04
+   11 00000018 E3520000        cmp              r2,#0x00
+   12 0000001C 1AFFFFF9        bne              loop
+   13 00000020 00000000        area             program,data,readonly
+   14 00000024 48 65 6C 
+              6C 6F    string  dcb              "Hello"
+   15 00000029                 end
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\4_1.d -o.\objects\4_1.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\
+CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 5
+25" --list=.\listings\4_1.lst 4_1.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+loop 00000008
+
+Symbol: loop
+   Definitions
+      At line 6 in file 4_1.asm
+   Uses
+      At line 12 in file 4_1.asm
+Comment: loop used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 3 in file 4_1.asm
+   Uses
+      None
+Comment: main unused
+program 00000000
+
+Symbol: program
+   Definitions
+      At line 1 in file 4_1.asm
+   Uses
+      None
+Comment: program unused
+string 00000024
+
+Symbol: string
+   Definitions
+      At line 14 in file 4_1.asm
+   Uses
+      At line 4 in file 4_1.asm
+Comment: string used once
+4 symbols
+338 symbols in table

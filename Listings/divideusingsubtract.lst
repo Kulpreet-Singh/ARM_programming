@@ -1,0 +1,87 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             program, code, readonly
+    2 00000000         Entry
+    3 00000000         Main
+    4 00000000 E59F101C        LDR              R1, value1
+    5 00000004 E59F201C        LDR              R2, value2
+    6 00000008 E3A00000        MOV              R0, #0X00000000
+    7 0000000C         LOOP
+    8 0000000C E0511002        SUBS             R1, R1,R2
+    9 00000010 E2800001        ADD              R0, R0,#1
+   10 00000014 5AFFFFFC        BPL              LOOP
+   11 00000018 E0813002        ADD              R3, R1,R2
+   12 0000001C E2500001        SUBS             R0,R0,#1
+   13 00000020 EF000011        SWI              &11
+   14 00000024         
+   15 00000024                 AREA             program, code, readonly
+   16 00000024 00000007 
+                       value1  DCD              &00000007
+   17 00000028 00000002 
+                       value2  DCD              &00000002
+   18 0000002C                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\divideusingsubtract.d -o.\objects\divideusingsubtract.o -IC:\Keil_v
+5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --pre
+define="__UVISION_VERSION SETA 525" --list=.\listings\divideusingsubtract.lst d
+ivideusingsubtract.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Entry 00000000
+
+Symbol: Entry
+   Definitions
+      At line 2 in file divideusingsubtract.asm
+   Uses
+      None
+Comment: Entry unused
+LOOP 0000000C
+
+Symbol: LOOP
+   Definitions
+      At line 7 in file divideusingsubtract.asm
+   Uses
+      At line 10 in file divideusingsubtract.asm
+Comment: LOOP used once
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 3 in file divideusingsubtract.asm
+   Uses
+      None
+Comment: Main unused
+program 00000000
+
+Symbol: program
+   Definitions
+      At line 1 in file divideusingsubtract.asm
+   Uses
+      None
+Comment: program unused
+value1 00000024
+
+Symbol: value1
+   Definitions
+      At line 16 in file divideusingsubtract.asm
+   Uses
+      At line 4 in file divideusingsubtract.asm
+Comment: value1 used once
+value2 00000028
+
+Symbol: value2
+   Definitions
+      At line 17 in file divideusingsubtract.asm
+   Uses
+      At line 5 in file divideusingsubtract.asm
+Comment: value2 used once
+6 symbols
+338 symbols in table

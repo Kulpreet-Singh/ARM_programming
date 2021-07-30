@@ -1,0 +1,45 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Program, CODE, READONLY
+    2 00000000         ENTRY
+    3 00000000 E3A00003        LDR              R0,=3
+    4 00000004 E3A01002        LDR              R1,=2
+    5 00000008 E3A03005        LDR              R3,=5
+    6 0000000C E3A04004        LDR              R4,=4
+    7 00000010 E0805001        ADD              R5, R0, R1
+    8 00000014 E0446003        SUB              R6, R4, R3
+    9 00000018 E0070695        MUL              R7, R5, R6
+   10 0000001C EF000011        SWI              &11
+   11 00000020                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\equation.d -o.\objects\equation.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Ke
+il_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERS
+ION SETA 525" --list=.\listings\equation.lst equation.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file equation.asm
+   Uses
+      None
+Comment: ENTRY unused
+Program 00000000
+
+Symbol: Program
+   Definitions
+      At line 1 in file equation.asm
+   Uses
+      None
+Comment: Program unused
+2 symbols
+334 symbols in table

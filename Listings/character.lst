@@ -1,0 +1,61 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READWRITE
+    2 00000000         ENTRY
+    3 00000000 E3A00004        LDR              R0,=4
+    4 00000004 E3A01003        MOV              R1, #3
+    5 00000008 E0812000        ADD              R2, R1, R0
+    6 0000000C E59F3000        LDR              R3,char
+    7 00000010 E59F4000        LDR              R4,x
+    8 00000014 42      char    DCB              'B'
+    9 00000015 00 00 00 
+              00000020 x       DCD              &20
+   10 0000001C                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\character.d -o.\objects\character.o -IC:\Keil_v5\ARM\RV31\INC -IC:\
+Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VE
+RSION SETA 525" --list=.\listings\character.lst character.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file character.asm
+   Uses
+      None
+Comment: ENTRY unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file character.asm
+   Uses
+      None
+Comment: PROGRAM unused
+char 00000014
+
+Symbol: char
+   Definitions
+      At line 8 in file character.asm
+   Uses
+      At line 6 in file character.asm
+Comment: char used once
+x 00000018
+
+Symbol: x
+   Definitions
+      At line 9 in file character.asm
+   Uses
+      At line 7 in file character.asm
+Comment: x used once
+4 symbols
+336 symbols in table

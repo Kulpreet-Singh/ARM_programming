@@ -1,0 +1,19 @@
+;CODE: Find large number in array 
+	AREA PROGRAM,CODE,READONLY
+ENTRY
+	LDR R0,=value1
+	LDRB R1,[R0]
+	LDR R3,count
+loop
+	LDRB R2,[R0],#0x01
+	CMP R2,R1
+	MOVGT R1,R2
+	SUB R3,#0x01
+	CMP R3,#0x00
+	BNE loop
+	STR R1,result
+	AREA PROGRAM,DATA,READONLY
+count DCD &00000008
+value1 DCB 1,2,6,3,4,7,3,2
+result DCD 0
+	END

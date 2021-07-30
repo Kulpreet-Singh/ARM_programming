@@ -1,0 +1,43 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             program,CODE,READONLY
+    2 00000000         ENTRY
+    3 00000000 E3A01005        MOV              r1,#5
+    4 00000004 E3A02007        MOV              r2,#7
+    5 00000008 E1520001        CMP              r2,r1
+    6 0000000C C1A01002        MOVGT            r1,r2       ;r1 has the result 
+                                                            i.e. the largest va
+                                                            lue
+    7 00000010                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\q4_small.d -o.\objects\q4_small.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Ke
+il_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERS
+ION SETA 525" --list=.\listings\q4_small.lst q4_small.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file q4_small.asm
+   Uses
+      None
+Comment: ENTRY unused
+program 00000000
+
+Symbol: program
+   Definitions
+      At line 1 in file q4_small.asm
+   Uses
+      None
+Comment: program unused
+2 symbols
+334 symbols in table

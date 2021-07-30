@@ -1,0 +1,89 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;CODE: Find large number in array 
+    2 00000000                 AREA             PROGRAM,CODE,READONLY
+    3 00000000         ENTRY
+    4 00000000 E59F0020        LDR              R0,=value1
+    5 00000004 E5D01000        LDRB             R1,[R0]
+    6 00000008 E59F301C        LDR              R3,count
+    7 0000000C         loop
+    8 0000000C E4D02001        LDRB             R2,[R0],#0x01
+    9 00000010 E1520001        CMP              R2,R1
+   10 00000014 B1A01002        MOVLT            R1,R2
+   11 00000018 E2433001        SUB              R3,#0x01
+   12 0000001C E3530000        CMP              R3,#0x00
+   13 00000020 1AFFFFF9        BNE              loop
+   14 00000024 E58F100C        STR              R1,result
+   15 00000028 00000000        AREA             PROGRAM,DATA,READONLY
+   16 0000002C 00000008 
+                       count   DCD              &00000008
+   17 00000030 01 02 06 
+              03 04 07 
+              03 02    value1  DCB              1,2,6,3,4,7,3,2
+   18 00000038 00000000 
+                       result  DCD              0
+   19 0000003C                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\example22.d -o.\objects\example22.o -IC:\Keil_v5\ARM\RV31\INC -IC:\
+Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VE
+RSION SETA 525" --list=.\listings\example22.lst Example22.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 3 in file Example22.s
+   Uses
+      None
+Comment: ENTRY unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 2 in file Example22.s
+   Uses
+      None
+Comment: PROGRAM unused
+count 0000002C
+
+Symbol: count
+   Definitions
+      At line 16 in file Example22.s
+   Uses
+      At line 6 in file Example22.s
+Comment: count used once
+loop 0000000C
+
+Symbol: loop
+   Definitions
+      At line 7 in file Example22.s
+   Uses
+      At line 13 in file Example22.s
+Comment: loop used once
+result 00000038
+
+Symbol: result
+   Definitions
+      At line 18 in file Example22.s
+   Uses
+      At line 14 in file Example22.s
+Comment: result used once
+value1 00000030
+
+Symbol: value1
+   Definitions
+      At line 17 in file Example22.s
+   Uses
+      At line 4 in file Example22.s
+Comment: value1 used once
+6 symbols
+340 symbols in table
